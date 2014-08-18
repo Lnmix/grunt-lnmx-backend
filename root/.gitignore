@@ -1,0 +1,5 @@
+coverage.html
+.grunt
+node_modules
+config/runtime
+.vagrant
