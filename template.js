@@ -15,7 +15,10 @@ exports.template = function(grunt, init, done) {
 		init.prompt('title'),
 		init.prompt('description'),
 		init.prompt('version'),
-		init.prompt('main')
+		init.prompt('main'),
+		init.prompt('repository'),
+	    init.prompt('homepage'),
+	    init.prompt('bugs')
 	], function(err, props) {
 		var files = init.filesToCopy(props);
 		props.projectRoot = props.main.split('/').shift();
@@ -28,6 +31,9 @@ exports.template = function(grunt, init, done) {
 			description: props.description,
 			version: props.version,
 			main: props.main,
+			npm_test: 'grunt',
+			repository: props.repository,
+			bugs: props.bugs,
 			devDependencies: {
 				"blanket": "^1.1.6",
 			    "grunt": "^0.4.5",
